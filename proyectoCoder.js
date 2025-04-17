@@ -24,7 +24,7 @@ function reservarTipoTrabajo() {
     if (tipoTrabajo) {
         trabajos++
         reservaTrabajos += `${tipoTrabajo}`
-    }else{
+    } else {
         alert("No reservaste ningun trabajo")
     }
 }
@@ -64,3 +64,50 @@ while (opcion !== "4") {
 }
 
 alert("Nos vemos luego")
+
+
+
+
+class productos {
+    constructor(nombre, precio) {
+        this.nombre = nombre;
+        this.precio = precio;
+    }
+}
+
+class stockProductos {
+    constructor() {
+        this.productos = [];
+    }
+
+    añadirProductos(producto) {
+        this.productos.push(producto)
+    }
+
+    mostrarProductos() {
+        for (let i = 0; i < this.productos.length; i++) {
+            const producto = this.productos[i];
+            console.log(`${producto.nombre}-$${producto.precio}`);
+        }
+    }
+
+}
+
+const stock = new stockProductos();
+
+const espumaAfeitar = new productos("Barra espuma afeitar", 3000);
+const despuesAfeitar = new productos("Locion para despues de afeitar", 4500);
+const bañosCrema = new productos("Baños de crema", 7000);
+const ampollaNutricion = new productos("Ampolla para nutricion", 6000)
+const aceiteReparador = new productos("Aceite reparador de puntas", 8000);
+const cremaAcida = new productos("Crema acida para nutricion", 12000)
+
+
+stock.añadirProductos(espumaAfeitar)
+stock.añadirProductos(despuesAfeitar)
+stock.añadirProductos(bañosCrema)
+stock.añadirProductos(ampollaNutricion)
+stock.añadirProductos(aceiteReparador)
+stock.añadirProductos(cremaAcida)
+
+stock.mostrarProductos();
